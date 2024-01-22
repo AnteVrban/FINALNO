@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stil.css">
+  
+    <title>Web Shop Računalne Opreme - Početna stranica</title>
+</head>
+<body>
+    <header class="header">
+        <h1>WEB-SHOP RAČUNALNE OPREME</h1>
+        <nav class="toolbar">
+            <a href="index.html" class="toolbar-button">Početna stranica</a>
+            <a href="proizvodi.php" class="toolbar-button">Proizvodi</a>
+            <a href="kontakt.html" class="toolbar-button">Kontakt</a>
+            <a href="registracija.html" class="toolbar-button">Prijavi se</a>
+        </nav>
+    </header>
+   
+            <div class="registration-form">
+                <h2>Registracija</h2>
+                <div class="form-container">
+                    
+                        <label for="username">Korisničko ime:</label>
+                        <input type="text" id="username" name="username" class="form-input" required>
+
+                        <label for="username">Email:</label>
+                        <input type="text" id="email" name="email" class="form-input" required>
+
+                        <label for="password">Lozinka:</label>
+                        <input type="password" id="password" name="password" class="form-input" required>
+
+                        <label for="confirmPassword">Potvrdi lozinku:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
+
+                        <button type="button" onclick="alert('Uspješno ste registrirani - prijavite se')" class="form-button">Registriraj se</button>
+                    </form>
+                </div>
+            </div>
+            <div class="login-form">
+                <h2>Prijava</h2>
+                <div class="form-container">
+                    
+                        <label for="loginUsername">Korisničko ime:</label>
+                        <input type="text" id="loginUsername" name="loginUsername" class="form-input" required>
+
+                        <label for="loginPassword">Lozinka:</label>
+                        <input type="password" id="loginPassword" name="loginPassword" class="form-input" required>
+
+                        <button type="button" onclick="alert('Uspješno ste prijavljeni')" class="form-button">Prijavi se</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
