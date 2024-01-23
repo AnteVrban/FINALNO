@@ -38,10 +38,12 @@ app.get("/korisnik/:id", function(request, response){
     })
 })
 app.post("/korisnik", function(request, response){
+    var id = request.body.id;
     var ime = request.body.ime;
     var sifra = request.body.sifra; 
-    var mail = request.body.mail;     
-    dbConn.query('INSERT INTO korisnici VALUES(NULL,?,?,?)',[ime, sifra, mail], function (error, results, fields) {
+    var mail = request.body.mail;    
+    
+    dbConn.query('INSERT INTO korisnici VALUES(?,?,?,?)',[id, ime, sifra, mail], function (error, results, fields) {
         if (error) throw error;
         return response.send({ error: false, data: results, message: 'INSERT korisnik ime='+ime });
     })
