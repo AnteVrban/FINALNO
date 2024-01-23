@@ -12,7 +12,7 @@
         }
 
         .header {
-            background-color: #007BFF; /* Use the same tone of blue */
+            background-color: #007BFF; 
             color: #fff;
             text-align: center;
             padding: 1rem 0;
@@ -118,18 +118,18 @@
         <h1>WEB-SHOP RAČUNALNE OPREME</h1>
         <nav class="toolbar">
             <a href="index.html" class="toolbar-button">Početna stranica</a>
-            <a href="index.php" class="toolbar-button">Proizvodi</a>
-            <a href="kontakt.php" class="toolbar-button">Kontakt</a>
-            <a href="registracija.html" class="toolbar-button">Prijavi se</a>
+            <a href="proizvodi.php" class="toolbar-button">Proizvodi</a>
+            <a href="kontakt.html" class="toolbar-button">Kontakt</a>
+            <a href="registracija.php" class="toolbar-button">Prijavi se</a>
         </nav>
     </header>
     <main>
         <div class="main">   
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "proizvid";
+            $servername = "student.veleri.hr";
+            $username = "avrban";
+            $password = "11";
+            $dbname = "avrban";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 

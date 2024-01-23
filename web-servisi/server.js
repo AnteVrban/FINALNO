@@ -9,25 +9,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 var dbConn = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "korisnici"
+    host: "student.veleri.hr",
+    user: "avrban",
+    password: "11",
+    database: "avrban"
     });
 
 dbConn.connect();    
 
-app.get("/podaci", function(request, response){
-    return response.send({message:"ok"});
-})
-app.get("/podaci/:id", function(request, response){
-    var id = request.params.id+1;
-    return response.send({message: id+" ok"});
-})
-app.post("/podaci", function(request, response){
-    var podaci = request.body.podatak;
-    return response.send({message: podaci+" ok"});
-})
+
 app.get("/korisnik", function(request, response){
     dbConn.query('SELECT * FROM korisnici', function (error, results, fields) {
         if (error) throw error;
@@ -48,10 +38,10 @@ app.get("/korisnik/:id", function(request, response){
     })
 })
 app.post("/korisnik", function(request, response){
-    var mail = request.body.mail;
-    var ime = request.body.ime; 
-    var sifra = request.body.sifra;     
-    dbConn.query('INSERT INTO korisnici VALUES(NULL,?,?,?)',[mail, ime, sifra], function (error, results, fields) {
+    var ime = request.body.ime;
+    var sifra = request.body.sifra; 
+    var mail = request.body.mail;     
+    dbConn.query('INSERT INTO korisnici VALUES(NULL,?,?,?)',[ime, sifra, mail], function (error, results, fields) {
         if (error) throw error;
         return response.send({ error: false, data: results, message: 'INSERT korisnik ime='+ime });
     })
